@@ -1,0 +1,39 @@
+#STUDENT RESULT ANALYZER
+print ("WELCOME")
+print ("INPUT ALL DETAILS IN BLOCK FORMAT")
+#NUMBER OF STUDENTS
+number_of_students = int (input ("number of students: "))
+passed = 0
+failed = 0
+#STUDENTS DETAIL
+for students in range (1, number_of_students + 1):
+    print (f"STUDENT {students}")
+    name = input ("Name: ")
+    if name == "0":
+        break
+    score = float (input ("Score: "))
+#GRADING SYSTEM
+    if score <= 49:
+        grade = "F"
+        failed += 1
+    elif score <= 59:
+        grade = "C"
+        passed += 1
+    elif score <= 69:
+        grade = "B"
+        passed += 1
+    else:
+        grade = "A"
+        passed += 1
+    print (f"GRADE: {grade}")
+#GRADE USAGE
+    if grade != "F":
+        print (f"{name} PASSED")
+    else:
+        print (f"{name} FAILED")
+#FINAL STATISTICS
+print (f"TOTAL STUDENTS: {number_of_students}")
+total_number_of_recorded_students = passed + failed
+print (f"TOTAL NUMBER OF RECORDED SCORES: {total_number_of_recorded_students}")
+print (f"TOTAL PASSED: {passed}")
+print (f"TOTAL FAILED: {failed}")
