@@ -1,0 +1,80 @@
+#simple multipurpose calculator
+#OPTIONS
+print ("CALCULATOR MENU")
+print ("1. arithmetics")
+print ("2. area of rectangle")
+print ("3. area of circle")
+print ("4. simple_interest")
+print ("5. average of numbers")
+OPTION = input ("ENTER YOUR OPTION (1-5): ")
+
+#ARITHMETICS
+if OPTION == "1":
+    num_1 = float(input ("enter first number: "))
+    operation = input ("input operation (+, *, -, /): ")
+    num_2 = float(input ("enter second number: "))
+    #ADDITION
+    if operation == "+":
+        result = num_1 + num_2
+        print ("result: ", result)
+    #SUBTRACTION
+    elif operation == "-":
+        result = num_1 - num_2
+        print ("result: ", result)
+    #MULTIPLICATION
+    elif operation == "*":
+        result = num_1 * num_2
+        print ("result: ", result)
+    #DIVISION
+    elif operation == "/":
+        if num_1 == 0:
+            result = 0
+        elif  num_2 == 0:
+            result = 0
+        else:
+            result =num_1 / num_2
+            print ("result: ", result)
+    else:
+        print ("INVALID OPERATION")
+
+#AREA OF RECTANGLE
+elif OPTION == "2":
+    length = float (input ("enter length: "))
+    breadth = float (input ("enter breadth: "))
+    area = length * breadth
+    print ("AREA OF RECTANGLE: ",area)
+
+#AREA OF CIRCLE
+elif OPTION == "3":
+    value = input ("input value (diameter, radius): "). lower()
+    #RADIUS
+    if value == "radius":
+        radius = float (input ("enter radius: "))
+        area = 3.142 * radius **2
+        print ("AREA OF CIRCLE: ",area)
+    #DIAMETER
+    elif value == "diameter":
+        diameter = float (input ("enter diameter: "))
+        area = (3.142 * diameter **2)/4
+        print ("AREA OF CIRCLE: ", area)
+    else:
+        print ("INVALID VALUE")
+
+#SIMPLE INTEREST
+elif OPTION == "4":
+    principal = float (input("enter principal: "))
+    rate = float (input ("enter rate: "))
+    time = float (input ("enter time: "))
+    simple_interest = (principal * rate * time)/100
+    print ("SIMPLE INTEREST: ", simple_interest)
+
+#AVERAGE OF NUMBERS
+elif OPTION == "5":
+    num_1 = float (input ("enter first number: "))
+    num_2 = float (input ("enter second number: "))
+    num_3 = float (input ("enter third number: "))
+    average = (num_1 + num_2 + num_3)/3
+    print ("AVERAGE OF NUMBERS: ",average)
+
+else:
+    print ("INVALID OPTION")
