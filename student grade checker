@@ -1,0 +1,40 @@
+#STUDENTS' GRADE CHECKER
+print ("WELCOME TO GRADE CHECKER")
+print ("INPUT ALL DETAILS IN BLOCK FORMAT")
+
+#grading system
+def grade(mark):
+    if mark >=70:
+        return "A"
+    elif mark >=60:
+        return "B"
+    elif mark >= 50:
+        return "C"
+    else:
+        return "F"
+
+#number of students
+number_of_students = int (input ("How many students?"))
+
+passed = 0
+failed = 0
+
+#student information
+for students in range (1, number_of_students + 1):
+    print (f"student {students}")
+    name = input ("please enter name: ")
+    if name == "0":
+        break
+
+    student_score = int (input ("please enter student's score: "))
+    result = grade (student_score)
+    print (f"student {students} has been graded {result}")
+    #total grade
+    if result == "F":
+        failed += 1
+    else:
+        passed += 1
+
+print (f"TOTAL NUMBER OF STUDENTS RECORDED = {passed + failed}")
+print (f"TOTAL PASS = {passed}")
+print (f"TOTAL FAILED = {failed}")
